@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Books{% endblock %}
+
+{% block content %}
+<h2 class="section-header">All Books</h2>
+<div class="grid">
+    {% for book in books %}
+    <div class="card">
+        <img src="{{ book.cover_url }}" alt="{{ book.title }} cover" class="book-cover">
+        <h3>{{ book.title }}</h3>
+        <span>by {{ book.author }}</span>
+        <small>{{ book.category }}</small>
+
+        <a class="btn1" href="/read/{{ book.id }}">Read</a>
+
+        {% if book.available%}
+        <a class="btn1" href="/borrow/{{ book.id }}">Borrow</a>
+
+        {% else %}
+        <span class="unavailable">Currently Unavailable</span>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

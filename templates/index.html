@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <section class="hero">
+        <h1>𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒅𝒊𝒈𝒊𝒕𝒂𝒍 𝒍𝒊𝒃𝒓𝒂𝒓𝒚</h1>
+        <p>𝙮𝙤𝙪𝙧 𝙜𝙖𝙩𝙚𝙬𝙖𝙮 𝙩𝙤 𝙠𝙣𝙤𝙬𝙡𝙚𝙙𝙜𝙚 𝙖𝙣𝙙 𝙡𝙚𝙩𝙚𝙧𝙖𝙩𝙪𝙧𝙚</p>
+        
+        <form class="search-bar"  method="get">
+            <input type="text" name="q" placeholder="Search for books, authors, or genres..." >
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section class="section">
+        <h2>{% if query %}Search Results"{{ query }}"{% else %}Featured Books{% endif %}</h2>
+        <div class="grid">
+            {% for book in books %}
+            <div class="card">
+                <img src="{{ book.cover_url }}" alt="{{ book.title }} cover" class="book-cover">
+                <h3>{{ book.title }}</h3>
+                <span>by {{ book.author }}</span>
+                <small>{{ book.category }}</small>
+
+                <a class="btn1" href="/read/{{ book.id }}">Read</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

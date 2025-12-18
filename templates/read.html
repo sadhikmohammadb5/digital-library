@@ -1,0 +1,11 @@
+{% extends "layout.html"%}
+{% block title %}Read - 𝙳𝚒𝚐𝚒𝚝𝚊𝚕𝙻𝚒𝚋𝚛𝚊𝚛𝚢 {% endblock %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p><i>by {{ book.author }}</i></p>
+
+<div class="reader">
+    <iframe src= "{{ book.content_url  }}" height="600px" width="100%"></iframe>
+</div>
+{% endblock %}
