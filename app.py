@@ -31,7 +31,7 @@ def index():
         ).fetchall()
     else:
         books = db.execute(
-            "SELECT id, title, author, category, cover_url FROM books LIMIT 4"
+            "SELECT id, title, author, category, cover_url FROM books LIMIT 6"
         ).fetchall()
 
     return render_template("index.html", books=books, query=query)

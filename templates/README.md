@@ -97,8 +97,9 @@ SQLite - Stores user and book data
 Security
 
 Werkzeug - Password hashing and authentication support
-/****
+
 Project File Structure and Explanation
+```
 digital-library/
 │
 ├── app.py
@@ -129,7 +130,7 @@ digital-library/
 └── README.md
     └── Project documentation
 
-****/
+```
 Each file has a specific purpose, making the project modular and easier to understand and maintain.
 
 Design Decisions:
